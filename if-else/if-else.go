@@ -22,3 +22,5 @@ func main() {
 		fmt.Println(num, " has multiple digits")
 	} // No need for parentheses, but braces are required
 }
+
+// NB. There is no ternary operator in Go, therefore if/else statements required for even simple conditionals
