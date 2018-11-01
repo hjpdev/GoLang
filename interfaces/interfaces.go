@@ -1,4 +1,4 @@
-package main
+package main // Interfaces are named collections of method signatures
 
 import "fmt"
 import "math"
@@ -32,13 +32,13 @@ func (c circle) perim() float64 {
 	return 2 * math.Pi * c.radius
 }
 
-func measure(g geometry) {
-	fmt.Println(g)
+func measure(g geometry) { // If a variable has an interface type, then we can call methods that are in the named interface
+	fmt.Println(g) // Here’s a generic measure function taking advantage of this to work on any geometry.
 	fmt.Println(g.area())
 	fmt.Println(g.perim())
 }
 
-func main() {
+func main() { // circle & rect both implement geometry interface ∴ can use instances of these structs as arguments to measure
 	r := rect{width: 3, height: 4}
 	c := circle{radius: 5}
 
