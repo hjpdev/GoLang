@@ -45,3 +45,23 @@ func TestTableSum(t *testing.T) {
 		}
 	}
 }
+
+func TestTablePower(t *testing.T) {
+	var powerTests = []struct {
+		num1     int
+		num2     int
+		expected int
+	}{
+		{2, 1, 2},
+		{2, 2, 4},
+		{2, 3, 8},
+		{3, 3, 27},
+		{1, 1, 1},
+	}
+
+	for _, test := range powerTests {
+		if output := Power(test.num1, test.num2); output != test.expected {
+			t.Error("Test failed: {}, {} inputted, {} expected, received {}", test.num1, test.num2, test.expected, output)
+		}
+	}
+}
