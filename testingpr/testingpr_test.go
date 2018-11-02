@@ -2,13 +2,13 @@ package main
 
 import "testing"
 
-func TestCalculate(t *testing.T) {
-	if Calculate(2) != 4 {
+func TestPlus2(t *testing.T) {
+	if Plus2(2) != 4 {
 		t.Error("Expected 2 + 2 == 4")
 	}
 }
 
-func TestTableCalculate(t *testing.T) {
+func TestTablePlus2(t *testing.T) {
 	var tests = []struct {
 		input    int
 		expected int
@@ -20,7 +20,7 @@ func TestTableCalculate(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		if output := Calculate(test.input); output != test.expected {
+		if output := Plus2(test.input); output != test.expected {
 			t.Error("Test failed: {} inputted, {} expected, received {}", test.input, test.expected, output)
 		}
 	}
@@ -42,6 +42,47 @@ func TestTableSum(t *testing.T) {
 	for _, test := range sumTests {
 		if output := Sum(test.num1, test.num2); output != test.expected {
 			t.Error("Test failed: {}, {} inputted, {} expected, received {}", test.num1, test.num2, test.expected, output)
+		}
+	}
+}
+
+func TestTableMinus(t *testing.T) {
+	var minusTests = []struct {
+		num1     int
+		num2     int
+		expected int
+	}{
+		{2, 1, 1},
+		{7, 5, 2},
+		{2, 2, 0},
+		{10, 12, -2},
+		{5, 4, 1},
+		{2, 7, -5},
+	}
+
+	for _, test := range minusTests {
+		if output := Minus(test.num1, test.num2); output != test.expected {
+			t.Error("Test failed: {}, {} inputted, {} expected, received {}", test.num1, test.num2, test.expected, output)
+		}
+	}
+}
+
+func TestTableDivider(t *testing.T) {
+	var divisionTests = []struct {
+		num1     float32
+		num2     float32
+		expected float32
+	}{
+		{9.0, 3.0, 3.0},
+		{12.0, 4.0, 3.0},
+		{9.0, 9.0, 1.0},
+		{10.0, 5.0, 2.0},
+		{2.0, 1.0, 2.0},
+	}
+
+	for _, test := range divisionTests {
+		if output := Divider(test.num1, test.num2); output != test.expected {
+			t.Error("Test failed: {}, {} inputted, {} expected, receivec {}", test.num1, test.num2, test.expected, output)
 		}
 	}
 }
