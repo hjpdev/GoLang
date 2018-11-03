@@ -46,6 +46,24 @@ func TestTableSum(t *testing.T) {
 	}
 }
 
+func TestTableMultipleSum(t *testing.T) {
+	var multipleSumTests = []struct {
+		numbers []int
+		sum     int
+	}{
+		{[]int{1, 2, 3}, 6},
+		{[]int{5, 10, 25}, 40},
+		{[]int{10, 20, 30}, 60},
+		{[]int{8, 6, 6}, 20},
+	}
+
+	for _, test := range multipleSumTests {
+		if output := multipleSum(test.numbers); output != test.sum {
+			t.Errorf("Test failed -> given: %s; expected: %d; received: %d", test.numbers, test.sum, output)
+		}
+	}
+}
+
 func TestTableMinus(t *testing.T) {
 	var minusTests = []struct {
 		num1     int
