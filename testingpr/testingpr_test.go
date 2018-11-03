@@ -21,7 +21,7 @@ func TestTablePlus2(t *testing.T) {
 
 	for _, test := range tests {
 		if output := Plus2(test.input); output != test.expected {
-			t.Error("Test failed: {} inputted, {} expected, received {}", test.input, test.expected, output)
+			t.Errorf("Test failed: %d inputted, %d expected, received %d", test.input, test.expected, output)
 		}
 	}
 }
@@ -41,7 +41,7 @@ func TestTableSum(t *testing.T) {
 
 	for _, test := range sumTests {
 		if output := Sum(test.num1, test.num2); output != test.expected {
-			t.Error("Test failed: {}, {} inputted, {} expected, received {}", test.num1, test.num2, test.expected, output)
+			t.Errorf("Test failed: %d, %d inputted, %d expected, received %d", test.num1, test.num2, test.expected, output)
 		}
 	}
 }
@@ -62,7 +62,7 @@ func TestTableMinus(t *testing.T) {
 
 	for _, test := range minusTests {
 		if output := Minus(test.num1, test.num2); output != test.expected {
-			t.Error("Test failed: {}, {} inputted, {} expected, received {}", test.num1, test.num2, test.expected, output)
+			t.Errorf("Test failed: %d, %d inputted, %d expected, received %d", test.num1, test.num2, test.expected, output)
 		}
 	}
 }
@@ -82,7 +82,7 @@ func TestTableDivider(t *testing.T) {
 
 	for _, test := range divisionTests {
 		if output := Divider(test.num1, test.num2); output != test.expected {
-			t.Error("Test failed: {}, {} inputted, {} expected, receivec {}", test.num1, test.num2, test.expected, output)
+			t.Errorf("Test failed: %f, %f inputted, %f expected, receivec %f", test.num1, test.num2, test.expected, output)
 		}
 	}
 }
@@ -102,7 +102,7 @@ func TestTablePower(t *testing.T) {
 
 	for _, test := range powerTests {
 		if output := Power(test.num1, test.num2); output != test.expected {
-			t.Error("Test failed: {}, {} inputted, {} expected, received {}", test.num1, test.num2, test.expected, output)
+			t.Errorf("Test failed: %d, %d inputted, %d expected, received %d", test.num1, test.num2, test.expected, output)
 		}
 	}
 }
