@@ -14,6 +14,14 @@ func Sum(x int, y int) (result int) {
 	return result
 }
 
+// multipleSum for more than 2 no.s
+func multipleSum(nums []int) (result int) {
+	if len(nums) == 0 {
+		return 0
+	}
+	return multipleSum(nums[1:]) + nums[0]
+}
+
 // Minus ...
 func Minus(x int, y int) (result int) {
 	result = x - y

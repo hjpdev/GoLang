@@ -59,7 +59,7 @@ func TestTableMultipleSum(t *testing.T) {
 
 	for _, test := range multipleSumTests {
 		if output := multipleSum(test.numbers); output != test.sum {
-			t.Errorf("Test failed -> given: %s; expected: %d; received: %d", test.numbers, test.sum, output)
+			t.Errorf("Test failed -> given: %v; expected: %d; received: %d", test.numbers, test.sum, output)
 		}
 	}
 }
