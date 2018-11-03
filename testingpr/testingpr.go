@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Calculate ...
+// Plus2 ...
 func Plus2(x int) (result int) {
 	result = x + 2
 	return result
