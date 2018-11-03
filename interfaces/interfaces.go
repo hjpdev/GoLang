@@ -38,10 +38,4 @@ func measure(g geometry) { // If a variable has an interface type, then we can c
 	fmt.Println(g.perim())
 }
 
-func main() { // circle & rect both implement geometry interface ∴ can use instances of these structs as arguments to measure
-	r := rect{width: 3, height: 4}
-	c := circle{radius: 5}
-
-	measure(r)
-	measure(c)
-}
+// circle & rect both implement geometry interface ∴ can use instances of these structs as arguments to measure
